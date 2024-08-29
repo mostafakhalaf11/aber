@@ -6,10 +6,17 @@ import 'package:aber/views/intro_screens/intro_body.dart';
 import 'package:aber/views/splash/splash_page.dart';
 import 'package:aber/views/intro_screens/widgets/intro_body_2.dart';
 import 'package:aber/views/intro_screens/widgets/intro_body_4.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const Aber());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (BuildContext context) => const Aber(),
+    ),
+  );
 }
 
 class Aber extends StatelessWidget {
@@ -19,6 +26,8 @@ class Aber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light, fontFamily: 'Poppins'),
       routes: {

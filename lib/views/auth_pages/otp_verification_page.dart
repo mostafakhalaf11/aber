@@ -1,4 +1,3 @@
-
 import 'package:aber/component/custom_button.dart';
 import 'package:aber/constants.dart';
 import 'package:aber/views/home_pages/home_page_view.dart';
@@ -11,7 +10,7 @@ class OtpVerificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  
       appBar: AppBar(
         iconTheme: const IconThemeData(
           color: kPrimaryColor,

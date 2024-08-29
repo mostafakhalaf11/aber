@@ -32,34 +32,27 @@ class _LandingState extends State<SplashPage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, IntroBody.id);
-        },
-        child: SingleChildScrollView(
-          // Wrap in SingleChildScrollView
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            // Change ListView to Column for better flexibility
-            children: [
-              SizedBox(
-                height: size.height * 0.13,
-              ),
-              const Flexible(
-                flex: 1,
-                child: AspectRatio(
-                  aspectRatio: 1.12, // Adjust aspect ratio for logo if needed
-                  child: Image(
-                    image: AssetImage('assets/images/applogo.png'),
-                  ),
-                ),
-              ),
-              const Image(
-                image: AssetImage('assets/images/landing_ground.jpg'),
-              ),
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            height: size.height * 0.15,
           ),
-        ),
+          const Flexible(
+            flex: 1,
+            child: Image(
+              image: AssetImage('assets/images/applogo.png'),
+              fit: BoxFit.contain,
+            ),
+          ),
+          const Flexible(
+            flex: 2,
+            child: Image(
+              image: AssetImage('assets/images/landing_ground.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
       ),
     );
   }
