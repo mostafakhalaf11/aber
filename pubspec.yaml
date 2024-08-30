@@ -33,6 +33,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_otp_text_field: ^1.2.0
+  flutter_polyline_points: ^2.1.0
+  flutter_svg: ^2.0.10+1
+  google_maps_flutter: ^2.9.0
   intl_phone_field: ^3.2.0
   location: ^7.0.0
   page_transition: ^2.1.0

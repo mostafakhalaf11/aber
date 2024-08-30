@@ -1,48 +1,55 @@
 import 'package:flutter/material.dart';
 
-class IntroBody3 extends StatelessWidget {
+class IntroBody3 extends StatefulWidget {
   const IntroBody3({super.key});
 
   @override
+  State<IntroBody3> createState() => _IntroBody3State();
+}
+
+class _IntroBody3State extends State<IntroBody3> {
+  
+  @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(
-          height: 100,
-        ),
-        SizedBox(
-          height: 400,
-          width: 400,
-          child: Image(
+    final size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: size.height * .15,
+          ),
+          const Image(
             image: AssetImage('assets/images/wallet.png'),
           ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Center(
-          child: Text(
-            "Earn Money",
-            style: TextStyle(
-                color: Colors.black, fontSize: 34, fontWeight: FontWeight.bold),
+          SizedBox(
+            height: size.height * .03,
           ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 60),
+          const Center(
             child: Text(
-              "Earn Money Earn Money Earn Money \n\t\t\t Earn MoneyEarn Money Earn ",
+              "Earn Money",
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
+                  color: Colors.black,
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: size.height * .04,
+          ),
+          const Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "Earn MoneyEarn Money \n\tEarn MoneyEarn",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

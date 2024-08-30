@@ -69,7 +69,7 @@ class _CustomFormTextfieldState extends State<CustomFormTextfield> {
               )
             : null,
       ),
-      style: const TextStyle(fontSize: 20),
+      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
     );
   }
 }

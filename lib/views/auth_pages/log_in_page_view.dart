@@ -1,8 +1,8 @@
 import 'package:aber/component/custom_button.dart';
+import 'package:aber/component/custom_phone_field.dart';
 import 'package:aber/views/auth_pages/otp_verification_page.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import '../../helpers/build_borders.dart';
+
 
 class LogInPageView extends StatefulWidget {
   static String id = 'LogInPageView';
@@ -17,18 +17,20 @@ class _LogInPageViewState extends State<LogInPageView> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
         body: SingleChildScrollView(
       child: Stack(
         children: [
           Image.asset(
-            height: 300,
-            width: double.infinity,
+            height: size.height * 0.4,
+            width: size.width,
             'assets/images/landing_ground.jpg',
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20, left: 20, top: 250),
+            padding:
+                EdgeInsets.only(right: 20, left: 20, top: size.height * 0.3),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -48,61 +50,39 @@ class _LogInPageViewState extends State<LogInPageView> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    const SizedBox(
-                      height: 50,
+                    SizedBox(
+                      height: size.height * 0.03,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 90),
-                      child: RichText(
-                        text: const TextSpan(
-                          text: 'Login ',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'with your\n phone number',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal),
+                    Row(
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            text: 'Login ',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
                             ),
-                          ],
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: 'with your\nphone number',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.normal),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: size.height * 0.04,
                     ),
-                    IntlPhoneField(
-                      dropdownIcon: const Icon(
-                        Icons.arrow_drop_down,
-                        size: 32,
-                        color: Colors.black,
-                      ),
-                      controller: phoneFieldController,
-                      dropdownDecoration: const BoxDecoration(),
-                      dropdownTextStyle: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                      decoration: InputDecoration(
-                        hintText: 'Mobile number',
-                        focusColor: Colors.grey,
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        focusedBorder: focusedBorder(Colors.grey),
-                        enabledBorder: enabledBorder(),
-                        errorBorder: errorBorder(),
-                        focusedErrorBorder: focusErrorBorder(),
-                      ),
-                      initialCountryCode: 'EG',
-                      keyboardType: TextInputType.phone,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 20,
+                    CustomPhoneField(
+                        phoneFieldController: TextEditingController()),
+                    SizedBox(
+                      height: size.height * 0.04,
                     ),
                     CustomButton(
                       color: const Color(0xff242A37),
@@ -111,10 +91,10 @@ class _LogInPageViewState extends State<LogInPageView> {
                       },
                       buttonLabel: 'Next',
                       buttonLabelColor: Colors.white,
-                      width: MediaQuery.of(context).size.width,
+                      width: size.width,
                     ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: size.height * 0.04,
                     ),
                   ],
                 ),

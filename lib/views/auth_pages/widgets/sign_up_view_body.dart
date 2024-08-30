@@ -1,11 +1,8 @@
+import 'package:aber/component/custom_phone_field.dart';
 import 'package:aber/component/custom_text_field.dart';
-import 'package:aber/helpers/build_borders.dart';
 import 'package:aber/views/home_pages/home_page_view.dart';
 import 'package:flutter/gestures.dart';
-
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-
 import '../../../component/custom_button.dart';
 import '../log_in_page_view.dart';
 
@@ -17,9 +14,9 @@ class SignUpViewBody extends StatefulWidget {
 }
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
-  TextEditingController phoneFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -28,7 +25,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           child: Column(
             children: [
               Container(
-                height: 700,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
@@ -80,8 +76,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: size.height * .03,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -90,38 +86,16 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           const CustomFormTextfield(
                             focusBorderColor: Colors.grey,
                             hintText: ' name@example.com',
-                            hintFontSize: 22,
+                            hintFontSize: 16,
                             validateMessage: 'Please enter your email',
                           ),
-                          const SizedBox(
-                            height: 25,
+                          SizedBox(
+                            height: size.height * 0.02,
                           ),
-                          IntlPhoneField(
-                            dropdownIcon: const Icon(
-                              Icons.arrow_drop_down,
-                              size: 32,
-                              color: Colors.black,
-                            ),
-                            controller: phoneFieldController,
-                            dropdownDecoration: const BoxDecoration(),
-                            dropdownTextStyle: const TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                            decoration: InputDecoration(
-                              hintText: 'Mobile number',
-                              focusColor: Colors.grey,
-                              hintStyle: const TextStyle(color: Colors.grey),
-                              focusedBorder: focusedBorder(Colors.grey),
-                              enabledBorder: enabledBorder(),
-                              errorBorder: errorBorder(),
-                              focusedErrorBorder: focusErrorBorder(),
-                            ),
-                            initialCountryCode: 'EG',
-                            keyboardType: TextInputType.phone,
-                            style: const TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(
-                            height: 30,
+                          CustomPhoneField(
+                              phoneFieldController: TextEditingController()),
+                          SizedBox(
+                            height: size.height * 0.04,
                           ),
                           CustomButton(
                             color: const Color(0xff242A37),
@@ -130,10 +104,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                             },
                             buttonLabel: 'SIGN UP',
                             buttonLabelColor: Colors.white,
-                            width: 350,
+                            width: size.width,
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: size.height * .03,
                           ),
                         ],
                       ),
@@ -141,8 +115,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 90,
+              SizedBox(
+                height: size.height * 0.1,
               ),
               RichText(
                 text: TextSpan(
