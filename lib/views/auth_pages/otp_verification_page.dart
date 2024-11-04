@@ -3,7 +3,6 @@ import 'package:aber/component/custom_otp_text_field.dart';
 import 'package:aber/constants.dart';
 import 'package:aber/views/home_pages/home_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class OtpVerificationPage extends StatelessWidget {
   static String id = 'OtpVerificationPage';

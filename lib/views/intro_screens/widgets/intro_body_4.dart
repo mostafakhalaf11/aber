@@ -76,7 +76,9 @@ class _IntroBody4State extends State<IntroBody4> {
                   width: 255,
                   onTap: () async {
                     LocationData locationData = await getLocation();
+                    // ignore: use_build_context_synchronously
                     Navigator.pushNamed(context, SignUpPageView.id);
+                    // ignore: avoid_print
                     print(
                         'Location: ${locationData.latitude}, ${locationData.longitude}');
                   },

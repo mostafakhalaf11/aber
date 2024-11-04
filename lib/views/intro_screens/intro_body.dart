@@ -5,7 +5,6 @@ import 'package:aber/views/intro_screens/widgets/intro_body_2.dart';
 import 'package:aber/views/intro_screens/widgets/intro_body_3.dart';
 import 'package:aber/views/intro_screens/widgets/intro_body_4.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../constants.dart';
