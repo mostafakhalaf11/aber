@@ -1,6 +1,6 @@
 import 'package:aber/component/custom_phone_field.dart';
 import 'package:aber/component/custom_text_field.dart';
-import 'package:aber/views/home_pages/home_page_view.dart';
+import 'package:aber/views/home_pages/offline_home_page_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../../component/custom_button.dart';
@@ -100,7 +100,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           CustomButton(
                             color: const Color(0xff242A37),
                             onTap: () {
-                              Navigator.pushNamed((context), HomePageView.id);
+                              Navigator.pushNamed(
+                                  (context), OfflineHomePageView.id);
                             },
                             buttonLabel: 'SIGN UP',
                             buttonLabelColor: Colors.white,

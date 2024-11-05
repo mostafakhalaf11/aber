@@ -1,7 +1,7 @@
 import 'package:aber/component/custom_button.dart';
 import 'package:aber/component/custom_otp_text_field.dart';
 import 'package:aber/constants.dart';
-import 'package:aber/views/home_pages/home_page_view.dart';
+import 'package:aber/views/home_pages/offline_home_page_view.dart';
 import 'package:flutter/material.dart';
 
 class OtpVerificationPage extends StatelessWidget {
@@ -52,7 +52,7 @@ class OtpVerificationPage extends StatelessWidget {
                 buttonLabelColor: Colors.black,
                 buttonLabel: 'VERIFY NOW',
                 onTap: () {
-                  Navigator.pushNamed((context), HomePageView.id);
+                  Navigator.pushNamed((context), OfflineHomePageView.id);
                 },
               ),
               SizedBox(

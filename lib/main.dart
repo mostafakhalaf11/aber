@@ -1,7 +1,8 @@
 import 'package:aber/views/auth_pages/log_in_page_view.dart';
 import 'package:aber/views/auth_pages/otp_verification_page.dart';
 import 'package:aber/views/auth_pages/sign_up_page_view.dart';
-import 'package:aber/views/home_pages/home_page_view.dart';
+import 'package:aber/views/home_pages/offline_home_page_view.dart';
+import 'package:aber/views/home_pages/online_home_page_view.dart';
 import 'package:aber/views/intro_screens/intro_body.dart';
 import 'package:aber/views/splash/splash_page.dart';
 import 'package:aber/views/intro_screens/widgets/intro_body_2.dart';
@@ -37,7 +38,8 @@ class Aber extends StatelessWidget {
         IntroBody4.id: (context) => const IntroBody4(),
         SignUpPageView.id: (context) => const SignUpPageView(),
         LogInPageView.id: (context) => const LogInPageView(),
-        HomePageView.id: (context) => const HomePageView(),
+        OfflineHomePageView.id: (context) => const OfflineHomePageView(),
+        OnlineHomePageView.id: (context) => const OnlineHomePageView(),
         OtpVerificationPage.id: (context) => const OtpVerificationPage(),
       },
       initialRoute: SplashPage.id,
